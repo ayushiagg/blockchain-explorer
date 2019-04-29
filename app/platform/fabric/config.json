@@ -34,31 +34,33 @@
       "organizations": {
         "Org1MSP": {
           "mspid": "Org1MSP",
+          "certificateAuthorities": "ca-magnetocorp",
           "fullpath": false,
           "adminPrivateKey": {
-            "path": "/fabric-path/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore"
+            "path": "/home/ayushi/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore"
           },
           "signedCert": {
-            "path": "/fabric-path/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts"
+            "path": "/home/ayushi/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts"
           }
         },
         "Org2MSP": {
           "mspid": "Org2MSP",
+          "certificateAuthorities": "ca-magnetocorp",
           "adminPrivateKey": {
-            "path": "/fabric-path/fabric-samples/first-network/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore"
+            "path": "/home/ayushi/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore"
           }
         },
         "OrdererMSP": {
           "mspid": "OrdererMSP",
           "adminPrivateKey": {
-            "path": "/fabric-path/fabric-samples/first-network/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore"
+            "path": "/home/ayushi/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore"
           }
         }
       },
       "peers": {
         "peer0.org1.example.com": {
           "tlsCACerts": {
-            "path": "/fabric-path/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
+            "path": "/home/ayushi/go/src/github.com/hyperledger/fabric-samples/first-network/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
           },
           "url": "grpcs://localhost:7051",
           "eventUrl": "grpcs://localhost:7053",
@@ -80,10 +82,23 @@
         "orderer.example.com": {
           "url": "grpcs://localhost:7050"
         }
+      },
+      "certificateAuthorities": {
+        "ca1-magnetocorp": {
+          "url": "http://localhost:7054",
+          "httpOptions": {
+            "verify": false
+          },
+          "registrar": {
+            "enrollId": "admin",
+            "enrollSecret": "adminpw"
+          },
+          "caName": "ca-magnetocorp"
+        }
       }
     },
     "network-2": {}
   },
-  "configtxgenToolPath": "/fabric-path/fabric-samples/bin",
+  "configtxgenToolPath": "/home/ayushi/go/src/github.com/hyperledger/fabric-samples/bin",
   "license": "Apache-2.0"
 }
